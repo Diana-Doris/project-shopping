@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "申请退款",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "goods-content": "/components-pages/GoodsContent",
+    "goods-msg": "/components-pages/GoodsMsg",
+    "goods-reason": "/components-pages/GoodsReason"
+  }
+}

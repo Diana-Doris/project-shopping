@@ -1,0 +1,38 @@
+.goods.data-v-e071e234 {
+  background-color: #fff;
+  margin: 10px;
+  padding: 5px 10px;
+  font-size: 16px;
+}
+.goods .reson.data-v-e071e234 {
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+.goods .reason-content .reason-body.data-v-e071e234 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  font-size: 10px;
+}
+.goods .detail-reason.data-v-e071e234 {
+  position: relative;
+  background-color: #eee;
+  font-size: 10px;
+}
+.goods .detail-reason textarea.data-v-e071e234 {
+  padding: 10px;
+  width: 260px;
+  height: 60px;
+  line-height: 15px;
+  margin-bottom: 10px;
+}
+.goods .detail-reason .limit-type.data-v-e071e234 {
+  position: absolute;
+  right: 10px;
+  bottom: 0;
+  color: #b7b7b7;
+}
+

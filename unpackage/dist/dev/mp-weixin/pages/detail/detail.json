@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "退款详情",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "order-msg": "/components-pages/OrdersMsg"
+  }
+}

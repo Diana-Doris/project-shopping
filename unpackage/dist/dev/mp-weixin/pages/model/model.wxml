@@ -1,0 +1,1 @@
+<view class="model data-v-496e414c"><view class="nav data-v-496e414c"><van-icon vue-id="e458e628-1" name="arrow-left" data-event-opts="{{[['^click',[['pageBack']]]]}}" data-com-type="wx" bind:click="__e" class="data-v-496e414c" bind:__l="__l"></van-icon><text class="data-v-496e414c">{{dataUpdated}}</text></view><view class="content-msg data-v-496e414c"><slot></slot></view></view>

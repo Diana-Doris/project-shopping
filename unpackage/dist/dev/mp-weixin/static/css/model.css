@@ -1,0 +1,20 @@
+.detail {
+		background-color: #ee6424;		
+		position: relative;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: 100vh;
+		width: 100vw;		
+		font-size: 14px;
+		line-height: 24px;		
+	}
+.detail	.nav{
+		background-color: #fff;
+		width: 100vw;
+		font-size: 16px;
+		padding: 30px 10px 10px;
+		display: flex;
+		align-items: center;
+	}

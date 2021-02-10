@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "退款记录",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "model": "/pages/model/model"
+  }
+}
