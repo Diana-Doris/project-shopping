@@ -1,6 +1,6 @@
 <template>
 		<model :dataUpdated="dataUpdated">
-			<view class="recode-content" v-for="item in data" :key="item.submitTime">		
+			<view class="recode-content" v-for="item in data" :key="item.getTimer">	
 					
 				<view class="content-detail">
 					<image :src="item.src" ></image>
@@ -50,7 +50,7 @@
 			}),			
 			data(){
 				return this.recodedata.sort(function(a,b){
-					return b.getTimer -a.getTimer
+					return b.getTimer - a.getTimer
 				})
 			}
 		}

@@ -2,6 +2,7 @@
   "navigationBarTitleText": "退款详情",
   "navigationStyle": "custom",
   "usingComponents": {
-    "order-msg": "/components-pages/OrdersMsg"
+    "order-msg": "/components-pages/OrdersMsg",
+    "model": "/pages/model/model"
   }
 }

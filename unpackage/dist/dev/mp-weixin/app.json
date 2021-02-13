@@ -1,10 +1,11 @@
 {
   "pages": [
+    "pages/success/success",
     "pages/index/index",
     "pages/model/model",
+    "pages/model/pay-money",
     "pages/detail/detail",
     "pages/record/record",
-    "pages/success/success",
     "pages/fail/fail"
   ],
   "subPackages": [],

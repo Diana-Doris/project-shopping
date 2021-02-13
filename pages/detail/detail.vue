@@ -1,90 +1,86 @@
 <template>
-	<view class="detail">
-		<view class="nav">
-			<van-icon name="arrow-left" @click="pageBack"/>
-			<text>退款详情</text>
-		</view>
-		<view class="content-area">
-			<!-- 系统处理 -->
-			<view class="system-deal" v-show="returnData">
-				<text>请等待系统处理</text>
-				<view class="write-time">
-					<view class="plus">还剩</view>
-					<van-count-down class="timer-machine" :time="time" use-slot @change="onChange">
-						<text class="item">{{ timeData.hours }}时</text>
-						<text class="item">{{ timeData.minutes }}分</text>
-						<text class="item">{{ timeData.seconds }}秒</text>
-					</van-count-down>
-				</view>
-			</view>
-			
-			<!-- 等待处理 -->
-			<view class="waite-deal" v-show="returnData">
-				<text>您已成功发起退款申请，请耐心等待商家处理</text>
-				<view class="tips">
-					<view class="item">若退款专员同意或超时处理，系统将退款给您</view>
-					<view class="item">如果系统拒绝，您可以根据原因修改退款申请后，再次发起，系统会重新处理</view>
-				</view>
-			</view>
-			
-			<!-- 成功  and  失败界面 -->
-			<view class="ok-fail" v-show="!returnData">
-				
-				<text>{{ returnDataDetail.resState }}</text>
-				<!-- 成功 -->
-				<view class="return-State" v-if="!returnData && returnDataDetail.resState === '退款成功'">
-					<view class="type">
-						<text>退款金额：</text>
-						<text>{{ returnDataDetail.money }}</text>
-					</view>
-					<view class="money">
-						<text>返回支付宝 ：</text>
-						<text>{{ returnDataDetail.money }}</text>
-					</view>
-					<view class="timer">
-						<text>时间：</text>
-						<text>{{ detailTime }}</text>
-					</view>
-				</view>
-				<!-- 失败 -->
-				<view class="return-State" v-else>
-					<view class="reason">
-						<text>原因：</text>
-						<text>商家拒绝退款</text>
-					</view>
-					<view class="money">
-						<text>退款金额：</text>
-						<text>0</text>
+		<model :dataUpdated="dataUpdated">
+			<view class="content-area">
+				<!-- 系统处理 -->
+				<view class="system-deal" v-show="returnData">
+					<text>请等待系统处理</text>
+					<view class="write-time">
+						<view class="plus">还剩</view>
+						<van-count-down class="timer-machine" :time="time" use-slot @change="onChange">
+							<text class="item">{{ timeData.hours }}时</text>
+							<text class="item">{{ timeData.minutes }}分</text>
+							<text class="item">{{ timeData.seconds }}秒</text>
+						</van-count-down>
 					</view>
 				</view>
 				
+				<!-- 等待处理 -->
+				<view class="waite-deal" v-show="returnData">
+					<text>您已成功发起退款申请，请耐心等待商家处理</text>
+					<view class="tips">
+						<view class="item">若退款专员同意或超时处理，系统将退款给您</view>
+						<view class="item">如果系统拒绝，您可以根据原因修改退款申请后，再次发起，系统会重新处理</view>
+					</view>
+				</view>
+				
+				<!-- 成功  and  失败界面 -->
+				<view class="ok-fail" v-show="!returnData">
+					
+					<text>{{ returnDataDetail.resState }}</text>
+					<!-- 成功 -->
+					<view class="return-State" v-if="!returnData && returnDataDetail.resState === '退款成功'">
+						<view class="type">
+							<text>退款金额：</text>
+							<text>{{ returnDataDetail.money }}</text>
+						</view>
+						<view class="money">
+							<text>返回支付宝 ：</text>
+							<text>{{ returnDataDetail.money }}</text>
+						</view>
+						<view class="timer">
+							<text>时间：</text>
+							<text>{{ detailTime }}</text>
+						</view>
+					</view>
+					<!-- 失败 -->
+					<view class="return-State" v-else>
+						<view class="reason">
+							<text>原因：</text>
+							<text>商家拒绝退款</text>
+						</view>
+						<view class="money">
+							<text>退款金额：</text>
+							<text>0</text>
+						</view>
+					</view>
+					
+				</view>
+				
+				<!-- 退款记录 -->
+				<view class="order-recode">
+					<text>退款记录</text>
+					<van-icon name="arrow" @click="recodeClick"/>
+				</view>
+				
+				<!-- 	退款信息 -->
+				<view class="order-msg">
+					<order-msg :returnDataDetail="returnDataDetail"/>				
+				</view>
+				
+				<!-- 底部button -->
+				<view class="footer-button">
+					<button type="default" class="edit-submit btn" v-show="returnData" @click="backPage">修改申请</button>
+					<button type="default" class="del-submit btn" v-show="returnData" @click="cancleApplication">撤销申请</button>
+					<button type="default" class="del-submit btn" v-show="!returnData && returnDataDetail.resState === '退款失败'" @click="orderPage">申诉</button>
+				</view>	
+				
 			</view>
-			
-			<!-- 退款记录 -->
-			<view class="order-recode">
-				<text>退款记录</text>
-				<van-icon name="arrow" @click="recodeClick"/>
-			</view>
-			
-			<!-- 	退款信息 -->
-			<view class="order-msg">
-				<order-msg :returnDataDetail="returnDataDetail"/>				
-			</view>
-			
-			<!-- 底部button -->
-			<view class="footer-button">
-				<button type="default" class="edit-submit btn" v-show="returnData" @click="backPage">修改申请</button>
-				<button type="default" class="del-submit btn" v-show="returnData" @click="cancleApplication">撤销申请</button>
-				<button type="default" class="del-submit btn" v-show="!returnData && returnDataDetail.resState === '退款失败'" @click="orderPage">申诉</button>
-			</view>	
-			
-		</view>
-		
-	</view>
+		</model>
 </template>
 
 <script>
 	import orderMsg from '@/components-pages/OrdersMsg.vue'
+	import model from '@/pages/model/model.vue'
 	import {getCurrentTime} from '@/uni/getCurrentTime/getCurrentTime.js';
 	import { mapMutations } from 'vuex'
 	
@@ -116,7 +112,8 @@
 			},6000)
 		},
 		components:{
-			orderMsg
+			orderMsg,
+			model
 		},
 		data() {
 			return {
@@ -125,7 +122,8 @@
 				returnData:true,
 				returnDataDetail:{},
 				time: 12 * 60 * 60 * 60 * 1000,
-				timeData: {}
+				timeData: {},
+				dataUpdated:'退款详情'
 			}
 		},		
 		methods:{
@@ -152,7 +150,7 @@
 						username:'系统',
 						src:'../../static/w3.jpg',
 						reason:'同意退款申请，退款金额将返回原处',
-						resState:'',
+						resState:'退款成功',
 						submitTime:getCurrentTime().str,
 						getTimer:getCurrentTime().timer
 					})
@@ -164,21 +162,9 @@
 				this.timeData = e.detail
 			},
 			recodeClick(){
-				let str = ""
-				for (let prop in this.returnDataDetail) {
-					str += prop + '=' + this.returnDataDetail[prop] + '&'
-				}
-				console.log(str)
 				uni.navigateTo({
-					url:'../record/record?'+str
+					url:'../record/record'
 				})
-			},
-			pageBack(){
-				uni.navigateBack({
-				    delta: 1,
-				    animationType: 'pop-out',
-				    animationDuration: 200
-				});
 			},
 			
 		}
@@ -186,25 +172,6 @@
 </script>
 
 <style lang="less" scoped>
-	.detail {
-		background-color: #eee;		
-		position: relative;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		height: 100vh;
-		width: 100vw;		
-		font-size: 14px;
-		line-height: 24px;
-		.nav{
-			background-color: #fff;
-			width: 100vw;
-			font-size: 16px;
-			padding: 30px 10px 10px;
-			display: flex;
-			align-items: center;
-		}				
 		.content-area{
 			padding:5px 10px;
 			font-size: 12px;
@@ -301,5 +268,4 @@
 			}
 		}
 		
-	}
 </style>

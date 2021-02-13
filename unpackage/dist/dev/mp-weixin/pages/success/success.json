@@ -1,4 +1,10 @@
 {
-  "navigationBarTitleText": "退款详情",
-  "usingComponents": {}
+  "navigationBarTitleText": "完成",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "model": "/pages/model/pay-money",
+    "complete": "/components-pages/OrderComplete",
+    "order-complete": "/components-pages/OrdersCommpleteMsg",
+    "write-pay": "/components-pages/orderWritePay"
+  }
 }

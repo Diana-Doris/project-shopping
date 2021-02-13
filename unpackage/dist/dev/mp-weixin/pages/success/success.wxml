@@ -1,1 +1,1 @@
-<view class="success">申诉成功</view>
+<model vue-id="1867f890-1" updownObj="{{updownObj}}" bind:__l="__l" vue-slots="{{['default']}}"><block wx:if="{{showPayComponent}}"><write-pay vue-id="{{('1867f890-2')+','+('1867f890-1')}}" bind:__l="__l"></write-pay></block><complete vue-id="{{('1867f890-3')+','+('1867f890-1')}}" bind:__l="__l"></complete><order-complete vue-id="{{('1867f890-4')+','+('1867f890-1')}}" bind:__l="__l"></order-complete></model>

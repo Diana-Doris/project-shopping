@@ -1,0 +1,1 @@
+<view class="writePay"><view class="writeMsg"><text class="needpay">需付款：￥98</text><text>剩余：时间</text></view><button type="default" data-event-opts="{{[['tap',[['payClick',['$event']]]]]}}" bindtap="__e">去支付</button></view>

@@ -12,8 +12,8 @@
 	}
 </script>
 
-<style>
+<style lang="scss">
 	/*每个页面公共css */
 	@import "wxcomponents/vant-weapp/common/index.wxss";
-	@import "@/static/css/reset.css";
+	@import "@/static/css/reset.scss";
 </style>

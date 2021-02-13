@@ -41,6 +41,7 @@
 	
 	export default {
 		onLoad(options) {
+			console.log(options)
 			this.titleName = options.titleNav;
 		},
 		components:{			
@@ -88,9 +89,6 @@
 						};
 						console.log(res)
 						this.changeUserName(this.obj);
-						for (let prop in this.obj) {
-							str += prop + '=' + this.obj[prop] + '&';
-						}
 						uni.navigateTo({
 							url:'../detail/detail',
 						})	

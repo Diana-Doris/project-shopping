@@ -105,11 +105,11 @@
 /******/
 /******/
 /******/ 		// mini-css-extract-plugin CSS loading
-/******/ 		var cssChunks = {"components-pages/GoodsContent":1,"components-pages/GoodsMsg":1,"components-pages/GoodsReason":1,"components-pages/OrdersMsg":1};
+/******/ 		var cssChunks = {"components-pages/OrdersCommpleteMsg":1,"components-pages/orderWritePay":1,"components-pages/OrderComplete":1,"components-pages/GoodsContent":1,"components-pages/GoodsMsg":1,"components-pages/GoodsReason":1,"components-pages/OrdersMsg":1};
 /******/ 		if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 		else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 			promises.push(installedCssChunks[chunkId] = new Promise(function(resolve, reject) {
-/******/ 				var href = "" + ({"components-pages/GoodsContent":"components-pages/GoodsContent","components-pages/GoodsMsg":"components-pages/GoodsMsg","components-pages/GoodsReason":"components-pages/GoodsReason","components-pages/OrdersMsg":"components-pages/OrdersMsg"}[chunkId]||chunkId) + ".wxss";
+/******/ 				var href = "" + ({"components-pages/OrdersCommpleteMsg":"components-pages/OrdersCommpleteMsg","components-pages/orderWritePay":"components-pages/orderWritePay","components-pages/OrderComplete":"components-pages/OrderComplete","components-pages/GoodsContent":"components-pages/GoodsContent","components-pages/GoodsMsg":"components-pages/GoodsMsg","components-pages/GoodsReason":"components-pages/GoodsReason","components-pages/OrdersMsg":"components-pages/OrdersMsg"}[chunkId]||chunkId) + ".wxss";
 /******/ 				var fullhref = __webpack_require__.p + href;
 /******/ 				var existingLinkTags = document.getElementsByTagName("link");
 /******/ 				for(var i = 0; i < existingLinkTags.length; i++) {
